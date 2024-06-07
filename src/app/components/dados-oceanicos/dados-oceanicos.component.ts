@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { DadoOceanico } from '../../interfaces/dado-oceanico';
+import { dadoOceanico } from '../../interfaces/dadoOceanico';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,7 +13,7 @@ import { BrowserModule } from '@angular/platform-browser';
   styleUrl: './dados-oceanicos.component.css',
 })
 export class DadosOceanicosComponent implements OnInit {
-  dados: DadoOceanico[] = [];
+  dados: dadoOceanico[] = [];
   filtro: any = {};
 
   constructor(private dataService: DataService) {}
@@ -25,7 +25,7 @@ export class DadosOceanicosComponent implements OnInit {
   carregarDados() {
     this.dataService
       .obterDados(this.filtro)
-      .subscribe((data: DadoOceanico[]) => {
+      .subscribe((data: dadoOceanico[]) => {
         this.dados = data;
       });
   }
