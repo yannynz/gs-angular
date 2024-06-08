@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OceanDataService } from '../../services/data.service'; 
+import { DadoOceanico } from '../../interfaces/DadoOceanico';
 
 @Component({
   selector: 'app-ocean-data-table',
@@ -13,10 +14,7 @@ export class OceanDataTableComponent implements OnInit {
   constructor(private oceanDataService: OceanDataService) { }
 
   ngOnInit(): void {
-    this.oceanDataService.getOceanData().subscribe(data => {
-      this.oceanData = data;
-      this.filteredData = data;
-    });
+
   }
   applyFilters(filters: any): void {
     this.filteredData = this.oceanData.filter(item => {
