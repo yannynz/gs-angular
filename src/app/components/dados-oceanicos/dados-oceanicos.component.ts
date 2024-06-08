@@ -1,32 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data.service';
-import { dadoOceanico } from '../../interfaces/dadoOceanico';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
+import { OceanDataService } from '../../services/data.service'; 
 
 @Component({
-  selector: 'app-dados-oceanicos',
-  standalone: true,
-  imports: [BrowserModule, FormsModule, HttpClientModule],
-  templateUrl: './dados-oceanicos.component.html',
-  styleUrl: './dados-oceanicos.component.css',
+  selector: 'app-ocean-data-table',
+  templateUrl: '../dados-oceanicos/dados-oceanicos.component.html',
+  styleUrls: ['../dados-oceanicos/dados-oceanicos.component.css']
 })
-export class DadosOceanicosComponent implements OnInit {
-  dados: dadoOceanico[] = [];
-  filtro: any = {};
+export class OceanDataTableComponent implements OnInit {
+  oceanData: any[] = [];
+  filteredData: any[] = [];
 
-  constructor(private dataService: DataService) {}
+  constructor(private oceanDataService: OceanDataService) { }
 
   ngOnInit(): void {
-    this.carregarDados();
+    this.oceanDataService.getOceanData().subscribe(data => {
+      this.oceanData = data;
+      this.filteredData = data;
+    });
   }
-
-  carregarDados() {
-    this.dataService
-      .obterDados(this.filtro)
-      .subscribe((data: dadoOceanico[]) => {
-        this.dados = data;
-      });
+  applyFilters(filters: any): void {
+    this.filteredData = this.oceanData.filter(item => {
+    });
   }
 }

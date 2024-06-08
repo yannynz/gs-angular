@@ -1,4 +1,4 @@
-export interface dadoOceanico {
+export interface DadoOceanico {
   regiao: string;
   especie: string;
   statusConservacao: string;

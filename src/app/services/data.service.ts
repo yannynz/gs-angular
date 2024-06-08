@@ -1,22 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
-  apiUrl = 'https://sua-api.com/dados';
+export class OceanDataService {
+
+  private apiUrl = 'https://fiap-3sis-gs-20241.azurewebsites.net';
 
   constructor(private http: HttpClient) { }
 
-  obterDados(filtro: any): Observable<any[]> {
-    let params = new HttpParams();
-    for (const key in filtro) {
-      if (filtro[key] !== '') {
-        params = params.append(key, filtro[key]);
-      }
-    }
-    return this.http.get<any[]>(this.apiUrl, { params });
+  getOceanData(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/ocean-data`);
   }
 }
