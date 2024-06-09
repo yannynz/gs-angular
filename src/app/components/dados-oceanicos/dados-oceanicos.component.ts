@@ -6,6 +6,7 @@ import { DadoOceanico} from '../../interfaces/DadoOceanico';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+
 @Component({
   selector: 'app-ocean-conditions',
   imports: [CommonModule, NavbarComponent, ReactiveFormsModule,FormsModule],
@@ -20,7 +21,7 @@ export class OceanConditionsComponent implements OnInit {
     projetosConservacao: '',
     temperaturaAgua: '',
     pH: '',
-    nivelPoluicao: ''
+    nivelPoluicao: '',
   };
 
   DadoOceanico: DadoOceanico[] = [];
@@ -39,6 +40,7 @@ export class OceanConditionsComponent implements OnInit {
   }
 
   loadPage(page: number): void {
+    
     this.OceanDataService.lista(page, 10, this.filters).subscribe(
       data => {
         this.DadoOceanico = data;

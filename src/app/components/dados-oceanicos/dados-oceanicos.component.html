@@ -1,86 +1,87 @@
 <div class="container my-4">
-    <div class="row justify-content-center">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-body">
-            <h1 class="text-center">Filters</h1>
-            <form (ngSubmit)="applyFilters()">
-              <div class="row g-3">
-                <div class="col-md-4">
-                  <label for="input1" class="form-label">Região</label>
-                  <input type="text" class="form-control" [(ngModel)]="filters.regiao" name="regiao">
-                </div>
-                <div class="col-md-4">
-                  <label for="input2" class="form-label">Espécies</label>
-                  <input type="text" class="form-control" [(ngModel)]="filters.especies" name="especies">
-                </div>
-                <div class="col-md-4">
-                  <label for="input3" class="form-label">Projetos de Conservacao</label>
-                  <input type="text" class="form-control" [(ngModel)]="filters.projetosConservacao" name="projetosConservacao">
-                </div>
-                <div class="col-md-4">
-                  <label for="input4" class="form-label">Temperatura da Água</label>
-                  <input type="text" class="form-control" [(ngModel)]="filters.temperaturaAgua" name="temperaturaAgua">
-                </div>
-                <div class="col-md-4">
-                  <label for="input5" class="form-label">pH</label>
-                  <input type="text" class="form-control" [(ngModel)]="filters.pH" name="pH">
-                </div>
-                <div class="col-md-4">
-                  <label for="input6" class="form-label">Níveis de Poluição</label>
-                  <input type="text" class="form-control" [(ngModel)]="filters.nivelPoluicao" name="nivelPoluicao">
-                </div>
-                <div class="col-12 text-center">
-                  <button type="submit" class="btn btn-outline-dark mt-3">Buscar</button>
-                </div>
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="card text-info-emphasis">
+        <div class="card-body">
+          <h1 class="text-center ">Filtros</h1>
+          <form (ngSubmit)="applyFilters()">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label for="input1" class="form-label">Região</label>
+                <input type="text" class="form-control" [(ngModel)]="filters.regiao" name="regiao">
               </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-4">
-      <div class="col-12 table-container">
-        <table class="table table-bordered text-center">
-          <thead>
-            <tr>
-              <th scope="col">Região</th>
-              <th scope="col">Temperatura da Água</th>
-              <th scope="col">pH</th>
-              <th scope="col">Níveis de Poluição</th>
-              <th scope="col">Espécies</th>
-              <th scope="col">Projetos de Conservacao</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of DadoOceanico">
-              <td>{{ item.regiao }}</td>
-              <td>{{ item.temperaturaAgua }}</td>
-              <td>{{ item.pH }}</td>
-              <td>{{ item.nivelPoluicao }}</td>
-              <td>
-                <ul>
-                  <li *ngFor="let status of item.especies">
-                    {{status?.nome}} ({{status?.status}})
-                  </li>
-                </ul>
-              </td>
-              <td>
-                <ul>
-                  <li *ngFor="let status of item.projetosConservacao">
-                    {{ status?.nomeProjeto}} ({{ status?.tipoProjeto}})
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="pagination-controls">
-          <button class="btn btn-outline-dark" (click)="loadPage(page - 1)" [disabled]="page <= 1">Anterior</button>
-          <span>{{ page }} de {{ totalPages }}</span>
-          <button class="btn btn-outline-dark" (click)="loadPage(page + 1)" [disabled]="page >= totalPages">Próximo</button>
+              <div class="col-md-4">
+                <label for="input2" class="form-label">Espécies</label>
+                <input type="text" class="form-control" [(ngModel)]="filters.especies" name="especies">
+              </div>
+              <div class="col-md-4">
+                <label for="input3" class="form-label">Projetos de Conservacao</label>
+                <input type="text" class="form-control" [(ngModel)]="filters.projetosConservacao"
+                  name="projetosConservacao">
+              </div>
+              <div class="col-md-4">
+                <label for="input4" class="form-label">Temperatura da Água</label>
+                <input type="text" class="form-control" [(ngModel)]="filters.temperaturaAgua" name="temperaturaAgua">
+              </div>
+              <div class="col-md-4">
+                <label for="input5" class="form-label">pH</label>
+                <input type="text" class="form-control" [(ngModel)]="filters.pH" name="pH">
+              </div>
+              <div class="col-md-4">
+                <label for="input6" class="form-label">Níveis de Poluição</label>
+                <input type="text" class="form-control" [(ngModel)]="filters.nivelPoluicao" name="nivelPoluicao">
+              </div>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-info mt-3">Buscar</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
-  
+  <div class="row mt-4">
+    <div class="col-12 table-container ">
+      <table class="table table-striped table-hover table-bordered text-center">
+        <thead class="table-info">
+          <tr>
+            <th scope="col">Região</th>
+            <th scope="col">Temperatura da Água</th>
+            <th scope="col">pH</th>
+            <th scope="col">Níveis de Poluição</th>
+            <th scope="col">Espécies</th>
+            <th scope="col">Projetos de Conservacao</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let item of DadoOceanico">
+            <td>{{ item.regiao }}</td>
+            <td>{{ item.temperaturaAgua }}</td>
+            <td>{{ item.pH }}</td>
+            <td>{{ item.nivelPoluicao }}</td>
+            <td>
+              <ul>
+                <li *ngFor="let status of item.especies">
+                  {{ status?.nome }} ({{ status?.status }})
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li *ngFor="let status of item.projetosConservacao">
+                  {{ status?.nomeProjeto }} ({{ status?.tipoProjeto }})
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagination-controls">
+        <button class="btn btn-outline-dark " (click)="loadPage(page - 1)" [disabled]="page <= 1">Anterior</button>
+        <span>{{ page }} de {{ totalPages }}</span>
+        <button class="btn btn-outline-dark" (click)="loadPage(page + 1)"
+          [disabled]="page >= totalPages">Próximo</button>
+      </div>
+    </div>
+  </div>
+</div>

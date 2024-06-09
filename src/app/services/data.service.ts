@@ -19,15 +19,18 @@ export class OceanDataService {
   }
 
   private createHttpParams(page: number, size: number, filters: any): HttpParams {
+    
     let params = new HttpParams()
       .set('pagina', page.toString())
       .set('quantidade', size.toString());
 
     if (filters.regiao) {
       params = params.set('regiao', filters.regiao);
+      
     }
     if (filters.especies) {
       params = params.set('especies', filters.especies);
+
     }
     if (filters.projetosConservacao) {
       params = params.set('projetosConservacao', filters.projetosConservacao);
@@ -37,11 +40,13 @@ export class OceanDataService {
     }
     if (filters.pH) {
       params = params.set('pH', filters.pH);
+
     }
     if (filters.nivelPoluicao) {
       params = params.set('niveisPoluicao', filters.nivelPoluicao);
     }
 
     return params;
+    
   }
 }
