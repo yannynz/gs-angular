@@ -1,11 +1,17 @@
 import { especie} from "./especieInterface"
-import { ProjetoConservacao } from "./projeto-conservacao"
+import { statusConservacao } from "./statusConservacao"
 
 export interface DadoOceanico {
   regiao: string
-  temperaturaAgua: number
-  ph: number
+  temperaturaMin: number
+  temperaturaMax: number
+  phMin: number
+  phMax: number
   niveisPoluicao: string
+  pagina: number
+  quantidade: number
   especie: especie[]
-  projetoConservacao: ProjetoConservacao[]
+  statusConservacao: statusConservacao[]
+
 }
+

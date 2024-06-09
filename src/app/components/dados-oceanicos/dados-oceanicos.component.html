@@ -1,0 +1,75 @@
+<div class="container px-4">
+
+    <div class="row gx-5">
+
+        <div class="col">
+
+            <button [(ngModel)]="filters.region" class="btn dropdown" style="background-color: rgb(228, 228, 228);" type="button" data-bs-toggle="dropdown" aria-expanded="false"> 
+            Região
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item" href="#">Atlântico Norte</a></li>
+                <li><a class="dropdown-item" href="#">Atlântico Sul</a></li>
+                <li><a class="dropdown-item" href="#">Pacífico Norte</a></li>
+                <li><a class="dropdown-item" href="#">Pacífico Sul</a></li>
+                <li><a class="dropdown-item" href="#">Índico</a></li>
+                <li><a class="dropdown-item" href="#">Ártico</a></li>
+                <li><a class="dropdown-item" href="#">Antártico</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">All</a></li>
+            </ul>
+            
+            <button [(ngModel)]="filters.species" class="btn dropdown" style="background-color: rgb(228, 228, 228);" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Especies
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item" href="#">Baleia-azul</a></li>
+                <li><a class="dropdown-item" href="#">Tubarão-branco</a></li>
+                <li><a class="dropdown-item" href="#">Peixe-palhaço</a></li>
+                <li><a class="dropdown-item" href="#">Tartaruga-verde</a></li>
+                <li><a class="dropdown-item" href="#">Coral</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">All</a></li>
+            </ul>
+
+            <button [(ngModel)]="filters.conservationStatus" class="btn dropdown" style="background-color: rgb(228, 228, 228);" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Status de conservação
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item" href="#">Ameaçada</a></li>
+                <li><a class="dropdown-item" href="#">Vulnerável</a></li>
+                <li><a class="dropdown-item" href="#">Menos preocupante</a></li>
+                <li><a class="dropdown-item" href="#">Criticamente ameaçado</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">All</a></li>
+            </ul>
+
+            <input [(ngModel)]="filters.waterTemperature" placeholder="Temperatura da Agua" />
+
+            <button [(ngModel)]="filters.pH" class="btn dropdown" style="background-color: rgb(228, 228, 228); size: 100px;" type="button" data-bs-toggle="dropdown">
+                pH
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item" href="#">Baixo</a></li>
+                <li><a class="dropdown-item" href="#">Moderado</a></li>
+                <li><a class="dropdown-item" href="#">Alto</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">All</a></li>
+            </ul>
+
+            <input [(ngModel)]="filters.pollutionLevels" placeholder="Niveis de Poluição" />  
+
+
+        </div>
+            <div class="container-fluid">
+                <button (click)="applyFilters()">Search</button>
+            </div>
+
+
+    </div>
+    
+</div>
