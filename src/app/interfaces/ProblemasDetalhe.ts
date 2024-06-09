@@ -1,7 +1,7 @@
 export interface ProblemasDetalhe {
-    tipo: string
-    titulo: string
+    type: string
+    title: string
     status: number
-    detalhes: string
-    instancia: string
+    detail: string
+    instance: string
 }
