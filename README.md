@@ -25,3 +25,21 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# Aplicação em Funcionamento
+> Prints
+
+## Instruções básicas:
+
+Na _NavBar_, a opção **Participantes** retorna uma página com o nome dos integrantes da GS;
+Já a opção _Ocean Conditions_, leva para a página principal onde os filtros podem ser aplicados.
+
+### Prints 
+
+_Participantes_
+
+!image.png
+
+_Ocean Conditions_
+
+!image.png
