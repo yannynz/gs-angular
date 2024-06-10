@@ -35,14 +35,14 @@ Já a opção _Ocean Conditions_, leva para a página principal onde os filtros 
 
 ### Prints 
 
-> _Participantes_
-![Integrantes]](img/participantes.png)
+**_Participantes_**
+>![Integrantes](img/participantes.png)
 
-> _Ocean Conditions_
-![Sem filtro aplicado](img/filtros.png)
+**_Ocean Conditions_**
+>![Sem filtro aplicado](img/filtros.png)
 
-> _Filtro aplicado: Índico_
-![Integrantes](img/indico.png)
+**_Filtro aplicado: Índico_**
+>![Integrantes](img/indico.png)
 
-> _Filtro aplicado: Níveis de Poluição_
-![Integrantes](img/baixo.png)
+**_Filtro aplicado: Níveis de Poluição_**
+>![Integrantes](img/baixo.png)

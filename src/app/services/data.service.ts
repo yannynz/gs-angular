@@ -34,7 +34,7 @@ lista(page: number, size: number, filters: any): Observable<DadoOceanico[]> {
       params = params.set('projetosConservacao', filters.projetosConservacao);
     }
     if (filters.temperaturaAgua) {
-      params = params.set('temperatura', filters.temperaturaAgua);    
+      params = params.set('temperaturaAgua', filters.temperaturaAgua);    
     }
     if (filters.pH) {
       params = params.set('pH', filters.pH);
