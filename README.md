@@ -27,7 +27,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 # Aplicação em Funcionamento
-> Prints
 
 ## Instruções básicas:
 
@@ -36,10 +35,14 @@ Já a opção _Ocean Conditions_, leva para a página principal onde os filtros 
 
 ### Prints 
 
-_Participantes_
+> _Participantes_
+![Integrantes]](img/participantes.png)
 
-!image.png
+> _Ocean Conditions_
+![Sem filtro aplicado](img/filtros.png)
 
-_Ocean Conditions_
+> _Filtro aplicado: Índico_
+![Integrantes](img/indico.png)
 
-!image.png
+> _Filtro aplicado: Níveis de Poluição_
+![Integrantes](img/baixo.png)

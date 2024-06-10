@@ -12,21 +12,19 @@ export class OceanDataService {
 
   constructor(private http: HttpClient) { }
 
-  lista(page: number, size: number, filters: any): Observable<DadoOceanico[]> {
+lista(page: number, size: number, filters: any): Observable<DadoOceanico[]> {
     const params = this.createHttpParams(page, size, filters);
 
     return this.http.get<DadoOceanico[]>(this.Url, { params });
   }
 
   private createHttpParams(page: number, size: number, filters: any): HttpParams {
-    
     let params = new HttpParams()
       .set('pagina', page.toString())
       .set('quantidade', size.toString());
 
     if (filters.regiao) {
       params = params.set('regiao', filters.regiao);
-      
     }
     if (filters.especies) {
       params = params.set('especies', filters.especies);
@@ -36,14 +34,14 @@ export class OceanDataService {
       params = params.set('projetosConservacao', filters.projetosConservacao);
     }
     if (filters.temperaturaAgua) {
-      params = params.set('temperatura', filters.temperaturaAgua);
+      params = params.set('temperatura', filters.temperaturaAgua);    
     }
     if (filters.pH) {
       params = params.set('pH', filters.pH);
 
     }
     if (filters.nivelPoluicao) {
-      params = params.set('niveisPoluicao', filters.nivelPoluicao);
+      params = params.set('nivelPoluicao', filters.nivelPoluicao);
     }
 
     return params;

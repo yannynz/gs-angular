@@ -24,7 +24,7 @@ export class OceanConditionsComponent implements OnInit {
     nivelPoluicao: '',
   };
 
-  DadoOceanico: DadoOceanico[] = [];
+ DadoOceanico: DadoOceanico[] = [];
   page: number = 1;
   totalPages: number = 1;
 
@@ -40,7 +40,6 @@ export class OceanConditionsComponent implements OnInit {
   }
 
   loadPage(page: number): void {
-    
     this.OceanDataService.lista(page, 10, this.filters).subscribe(
       data => {
         this.DadoOceanico = data;
